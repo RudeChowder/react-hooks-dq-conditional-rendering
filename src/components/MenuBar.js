@@ -1,6 +1,7 @@
 import React from "react";
+import { Select } from "semantic-ui-react";
 
-function MenuBar(props) {
+function MenuBar({ onButtonClick, selectedPage }) {
   /*
 
   The 'span' tags below are the menu items. Think about the way a menu 
@@ -12,21 +13,23 @@ function MenuBar(props) {
 
   */
 
+  //${selectedPage === this.id ? "active":null}
+
   return (
     <div className="ui four item menu">
-      <span className="item active">
+      <span id="Profile" className={`item active`} onClick={() => onButtonClick("Profile")}>
         <i className="user large icon" />
       </span>
 
-      <span className="item">
+      <span id="Photos" className="item" onClick={() => onButtonClick("Photos")}>
         <i className="photo large icon" />
       </span>
 
-      <span className="item">
+      <span id="Cocktails" className="item" onClick={() => onButtonClick("Cocktails")}>
         <i className="cocktail large icon" />
       </span>
 
-      <span className="item">
+      <span id="Pokemon" className="item active" onClick={() => onButtonClick("Pokemon")}>
         <i className=" themeisle large icon" />
       </span>
     </div>
